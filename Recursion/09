@@ -1,1 +1,10 @@
+package com.codestates.coplit; 
+import java.util.*;
 
+public class Solution { 
+	public int[] drop(int num, int[] arr){
+    if (num >= arr.length) { return new int[]{};}
+    if (num == 0) { return arr; }
+    return drop(num-1, Arrays.copyOfRange(arr, 1, arr.length)); 
+	} 
+}
