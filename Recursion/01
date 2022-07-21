@@ -1,1 +1,13 @@
+package com.codestates.coplit; 
 
+public class Solution { 
+  public int sumTo(int num){
+    
+    // num이 0일 경우 0 값 반환
+    if (num == 0) { return 0; }
+
+    // num이 0이 아닐 경우 재귀함수 실행
+    return num + sumTo(num-1);
+
+  }
+}
