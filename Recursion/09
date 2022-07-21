@@ -9,7 +9,8 @@ public class Solution {
     	// num이 0이면 빈 배열 반환
     	if (num == 0) { return new int[]{}; }
 
-    	// while (num < arr.length) 만족하는 동안 재귀함수 수행
+    	// while (num < arr.length) 만족하는 동안 재귀함수 수행 하다가, 
+	// num == arr.length일 때, arr 반환
     	return take(num, Arrays.copyOfRange(arr, 0, arr.length-1));
 
 	} 
