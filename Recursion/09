@@ -8,7 +8,8 @@ public class Solution {
     	if (num >= arr.length) { return arr; }
     	// num이 0이면 빈 배열 반환
     	if (num == 0) { return new int[]{}; }
-    
+
+    	// while (num < arr.length) 만족하는 동안 재귀함수 수행
     	return take(num, Arrays.copyOfRange(arr, 0, arr.length-1));
 
 	} 
