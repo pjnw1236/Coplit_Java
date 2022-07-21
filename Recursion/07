@@ -1,1 +1,11 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution { 
+	public int arrLength(int[] arr){
+    // TODO:
+    if (arr.length == 0) { return 0; }
+    return 1 + arrLength(Arrays.copyOfRange(arr, 1, arr.length));
+	} 
+}
 
