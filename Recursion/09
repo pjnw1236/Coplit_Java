@@ -3,12 +3,13 @@ import java.util.*;
 
 public class Solution { 
 	public int[] take(int num, int[] arr){
- if (num >= arr.length) {
-      return arr;
-    }
-    if (num == 0) {
-      return new int[]{};
-    }
-    return take(num, Arrays.copyOfRange(arr, 0, arr.length-1));
+
+    	// num이 arr 배열의 크기이상이면 arr 배열 반환
+    	if (num >= arr.length) { return arr; }
+    	// num이 0이면 빈 배열 반환
+    	if (num == 0) { return new int[]{}; }
+    
+    	return take(num, Arrays.copyOfRange(arr, 0, arr.length-1));
+
 	} 
 }
