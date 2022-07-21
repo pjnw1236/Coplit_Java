@@ -3,8 +3,10 @@ import java.util.*;
 
 public class Solution {  
 	public int arrProduct(int[] arr){
-    if (arr.length == 0) { return 1; }
-    return arr[0] * arrProduct(Arrays.copyOfRange(arr, 1, arr.length)); 
+
+    	if (arr.length == 0) { return 1; }
+    
+   	return arr[0] * arrProduct(Arrays.copyOfRange(arr, 1, arr.length)); 
+
 	} 
 }
-
