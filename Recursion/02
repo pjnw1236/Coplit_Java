@@ -1,1 +1,18 @@
+package com.codestates.coplit; 
 
+public class Solution { 
+	public boolean isOdd(int num) {
+
+    // num이 0일 경우 짝수이므로 false 반환
+    if (num == 0) { return false; }
+    // num이 1일 경우 홀수이므로 true 반환
+    if (num == 1) { return true; }
+
+    // num이 음수일 경우 -1을 곱하여 양수로 만듬
+    if (num < 0) { num *= -1; }
+    
+    // 재귀적으로 2씩 
+    return isOdd(num-2);
+
+  }
+}
