@@ -1,0 +1,21 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution {  
+	public String firstCharacter(String str) {
+    
+    // 빈 문자열 입력받은 경우 빈 문자열 반환
+    if (str.equals("")) { return str; }
+
+    String answer = ""; 
+
+    String[] strs = str.split(" ");
+
+    for (String element : strs) {
+      answer += element.substring(0, 1); 
+    }
+
+    return answer;
+    
+	} 
+}
