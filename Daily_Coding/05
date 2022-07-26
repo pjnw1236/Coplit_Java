@@ -1,0 +1,12 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution { 
+	public String firstReverse(String str) {
+
+		StringBuilder sb=new StringBuilder(str);  
+    sb.reverse();  
+    return sb.toString();  
+    
+	} 
+}
