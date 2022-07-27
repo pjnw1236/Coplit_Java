@@ -1,0 +1,28 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution { 
+	public boolean getDirections(int[][] matrix, int from, int to) {
+
+    if (from == to) { return true; }
+
+    Queue<Integer> q = new LinkedList<>(); 
+    q.add(from); 
+    boolean[] visited = new boolean[matrix.length];
+    visited[from] = true;
+
+    while (!q.isEmpty()) {
+      int now = q.poll(); 
+      for (int i=0; i<matrix[now].length; i++) {
+        if ((matrix[now][i] ==1) && (!visited[i])) {
+          q.add(i);
+          visited[i] = true;
+        }
+      }
+    }
+
+    if (visited[to]) { return true; }
+    return false;
+
+	} 
+}
