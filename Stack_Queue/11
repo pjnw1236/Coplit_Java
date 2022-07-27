@@ -3,26 +3,27 @@ import java.util.*;
 
 public class Solution { 
 	public boolean getDirections(int[][] matrix, int from, int to) {
-    if (from == to) { return true; }
+	
+    	if (from == to) { return true; }
 
-    int n = matrix.length;
+    	int n = matrix.length;
 
-    int[][] current_matrix = new int[n][n]; 
+    	int[][] current_matrix = new int[n][n]; 
 
-    for (int i=0; i<n; i++) {
-      for (int j=0; j<n; j++) {
-        current_matrix[i][j] = matrix[i][j]; 
-      }
-    }
+    	for (int i=0; i<n; i++) {
+      		for (int j=0; j<n; j++) {
+        		current_matrix[i][j] = matrix[i][j]; 
+      		}
+    	}
 
-    for (int i=0; i<n; i++) {
-      if (current_matrix[from][i] == 1) {
-        current_matrix[from][i] = 0;
-        if (getDirections(current_matrix, i, to)) { return true; }
-      }
-    }
+    	for (int i=0; i<n; i++) {
+      		if (current_matrix[from][i] == 1) {
+        		current_matrix[from][i] = 0;
+        		if (getDirections(current_matrix, i, to)) { return true; }
+      		}
+    	}
 
-    return false;
+    	return false;
 
 	} 
 }
