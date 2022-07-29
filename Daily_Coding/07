@@ -1,0 +1,18 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution { 
+	public HashMap<String, String> convertListToHashMap(String[][] arr) {
+
+    HashMap<String, String> map = new HashMap<>();
+
+    if ((arr.length == 0) || (arr.length == 1 && arr[0].length == 0)) { return new HashMap<String, String>(); }
+
+    for (String[] element : arr) {
+      if (!map.containsKey(element[0])) {map.put(element[0], element[1]); }
+      }
+    
+    return map;
+
+	} 
+}
