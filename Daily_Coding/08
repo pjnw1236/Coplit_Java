@@ -1,0 +1,10 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution {  
+	public String convertDoubleSpaceToSingle(String str) {
+
+    return str.replaceAll("  ", " "); 
+    
+	} 
+}
