@@ -1,0 +1,28 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution {
+  public static ArrayList<Integer[]> divideChocolateStick(int M, int N) {
+    
+    ArrayList<Integer[]> total_result = new ArrayList<>();
+
+    ArrayList<Integer> answer = new ArrayList<>();
+    Integer[] tmp = new Integer[3];
+
+    for (int i=1; i<=M; i++) {
+      if ((M%i == 0) && (N%i == 0)) {
+        answer = new ArrayList<>();
+        answer.add(i);
+        answer.add(M/i);
+        answer.add(N/i);
+        tmp = new Integer[3];
+        tmp = answer.toArray(tmp);
+        total_result.add(tmp);
+        }
+      }
+    
+    return total_result;
+
+  }
+}
+
