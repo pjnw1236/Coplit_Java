@@ -1,0 +1,50 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution { 
+
+  // 첫번째 메소드
+	public ArrayList<Integer[]> newChickenRecipe(int[] stuffArr, int choiceNum) {
+    // stuffArr "0" 3가 들어간 원소 제거 후 오름차순으로 정렬
+    ArrayList<Integer> temp = new ArrayList<>(); 
+    for (int stuff : stuffArr) {
+      if (Integer.toString(stuff).chars().filter(ch -> ch == '0').count() < 3) { temp.add(stuff); }
+    }
+    Collections.sort(temp);
+    stuffArr = new int[temp.size()]; 
+    for (int i=0; i<temp.size(); i++) { stuffArr[i] = temp.get(i); }
+    
+    // user 리스트 0 : 미사용 ; 1 : 사용
+    int[] used = new int[stuffArr.length];
+    
+    // answer 저장할 total_result 생성
+    ArrayList<Integer[]> total_result = new ArrayList<>();
+
+    ArrayList<Integer> answer = new ArrayList<>();
+
+    if (stuffArr.length < choiceNum) { return null; }
+
+    return permutation(total_result, answer, stuffArr, used, choiceNum);
+	}
+
+  // 두번째 메소드
+  public ArrayList<Integer[]> permutation(ArrayList<Integer[]> total_result, ArrayList<Integer> answer, int[] stuffArr, int[] used, int choiceNum) {
+    if (answer.size() == choiceNum) {
+      Integer[] tmp = new Integer[choiceNum];
+      tmp = answer.toArray(tmp); 
+      total_result.add(tmp); 
+      return new ArrayList<Integer[]>();
+    }
+    for (int i=0; i<stuffArr.length; i++) {
+      if (used[i] == 0) {
+        answer.add(stuffArr[i]); 
+        used[i] = 1;
+        permutation(total_result, answer, stuffArr, used, choiceNum);
+        used[i] = 0;
+        answer.remove(answer.size()-1);
+      }     
+    }
+    return total_result;
+  }
+
+}
