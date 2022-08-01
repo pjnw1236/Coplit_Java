@@ -9,13 +9,13 @@ public class Solution {
     			return combination(total_result, answer, RPS, rounds);
 		} 
 
-  		public ArrayList<String[]> combination( ArrayList<String[]> total_result, ArrayList<String> answer, String[] RPS, int rounds) {
-    			if (answer.size() == rounds) {
-      				String[] temp = new String[rounds];
-      				temp = answer.toArray(temp);
-      				total_result.add(temp);
-      				return total_result;
-    			}
+  	public ArrayList<String[]> combination( ArrayList<String[]> total_result, ArrayList<String> answer, String[] RPS, int rounds) {
+    		if (answer.size() == rounds) {
+      			String[] temp = new String[rounds];
+      			temp = answer.toArray(temp);
+      			total_result.add(temp);
+      			return total_result;
+    		}
     		for (int i=0; i<RPS.length; i++) {
       			answer.add(RPS[i]);
       			combination(total_result, answer, RPS, rounds); 
