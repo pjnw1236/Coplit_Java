@@ -1,0 +1,55 @@
+public class Solution {
+    public static int connectedVertices(int[][] edges) {
+
+        if (edges.length == 1) { return 1; }
+
+        // 정점의 최댓값 num 구하기
+        int num = 0;
+        for (int i=0; i<edges.length; i++) {
+            for (int j=0; j<edges[i].length; j++) {
+                if (num < edges[i][j]) { num = edges[i][j]; }
+            }
+        }
+
+        // graph 생성
+        int[][] graph = new int[num+1][num+1];
+        for (int x=0; x<num+1; x++) {
+            for (int y=0; y<num+1; y++) {
+                graph[x][y] = 1;
+                graph[y][x] = 1;
+            }
+        }
+
+        int[] visited = new int[num+1];  // 방문 여부
+
+        int cnt = 0;  // 그룹의 개수
+
+        for (int i=0; i<num+1; i++) {
+            if (visited[i] == 0) {
+                cnt += 1;
+                bfs(graph, i, visited);
+            }
+        }
+
+        return cnt;
+
+    }
+
+
+    public static void bfs(int[][] graph, int num, int[] visited) {
+        visited[num] = 1;
+        Queue<Integer> q = new LinkedList<>();
+        q.add(num);
+        while (!q.isEmpty()) {
+            int val = q.poll();
+            for (int i=0; i<graph.length; i++) {
+                if (graph[val][i] == 1 && visited[i] == 0) {
+                    q.add(i);
+                    visited[i] = 1;
+                }
+            }
+        }
+        return;
+    }
+
+}
