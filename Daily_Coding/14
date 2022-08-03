@@ -1,0 +1,15 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution { 
+	public boolean superIncreasing(int[] arr) {
+
+        int S = 0;
+        for (int i=1; i<arr.length; i++) {
+            S += arr[i-1];
+            if (arr[i] <= S) { return false; } 
+        }
+        return true;
+        
+	} 
+}
