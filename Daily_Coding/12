@@ -10,6 +10,7 @@ public class Solution {
 
     int[] head = Arrays.copyOfRange(arr, arr.length-1, arr.length);
     int[] tail = reverseArr(Arrays.copyOfRange(arr, 0, arr.length-1));
+    // int[] tail = Arrays.copyOfRange(arr, arr.length-1, arr.length);
     int[] dest = new int[head.length+tail.length];
     System.arraycopy(head, 0, dest, 0, head.length);
     System.arraycopy(tail, 0, dest, head.length, tail.length);
