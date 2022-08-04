@@ -1,0 +1,15 @@
+package com.codestates.coplit; 
+import java.util.*;
+
+public class Solution { 
+	public boolean isIsogram(String str) {
+
+    Set<Character> set = new HashSet<>();
+    for(int i=0; i<str.length(); i++) {
+      if (set.contains(str.charAt(i))) { return false; } 
+      else { set.add(str.charAt(i)); }
+    }
+    return true;
+
+	} 
+}
