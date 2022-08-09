@@ -10,4 +10,4 @@ public class Solution {
 
 //        Solution sol = new Solution();
 //        int output = sol.sumTo(10);
-//        System.out.println(output);
+//        System.out.println(output); // --> 55
