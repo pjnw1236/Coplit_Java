@@ -1,0 +1,22 @@
+package com.codestates.coplit;
+import java.util.*;
+
+public class Solution {
+    public int paveBox(Integer[] boxes) {
+
+        Queue<Integer> q = new LinkedList<>();
+        for (Integer box : boxes) { q.add(box); }
+        List<Integer> result = new ArrayList<>();
+
+        int check = q.peek();
+        int S = 0;
+
+        while (!q.isEmpty()) {
+            if (check >= q.peek()) { S += 1; q.poll(); result.add(S); }
+            else { check = q.poll(); S = 1; }
+        }
+
+        return Collections.max(result);
+
+    }
+}
